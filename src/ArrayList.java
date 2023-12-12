@@ -51,4 +51,19 @@ public class ArrayList
 
     }
 
+    public void Add (int [] elements)
+    {
+
+        if (_array.length-Count < elements.length)
+        {
+            IncreaseLength(elements.length);
+        }
+
+        for (int i=Count; i<(Count+elements.length); i++) {
+            _array[i] = elements[i-Count];
+        }
+
+        Count = Count+elements.length;
+    }
+
 }
